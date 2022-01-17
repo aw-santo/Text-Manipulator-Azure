@@ -38,7 +38,7 @@ export default function TextForm(props) {
 
         // 2.
 
-        let tx = text.split(' ').map((t) => {
+        let tx = text.split(/\s+/).map((t) => {
             return t[0].toUpperCase() + t.slice(1).toLowerCase();
         }).join(' ')
         setText(tx);
@@ -58,7 +58,7 @@ export default function TextForm(props) {
         props.alert("success", "Text cleared!");
     }
 
-    let words = text.split(' ').filter( (ele) => { return ele.length!==0 }).length;
+    let words = text.split(/\s+/).filter( (ele) => { return ele.length!==0 }).length;
 
     const onCopy = () => {
 
