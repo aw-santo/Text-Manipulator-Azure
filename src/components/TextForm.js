@@ -58,7 +58,7 @@ export default function TextForm(props) {
         props.alert("success", "Text cleared!");
     }
 
-    let words = text===''? 0 : text.split(' ').length;
+    let words = text.split(' ').filter( (ele) => { return ele.length!==0 }).length;
 
     const onCopy = () => {
 
@@ -75,12 +75,12 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className={`form-control text-light text-${props.mode === 'light' ? "dark" : "light"}`} style={{backgroundColor: props.mode === 'light' ? "white" : "#40454a"}} id="myBox" value={text} rows="8" spellCheck="false" onChange={onTextAreaChange}></textarea>
                 </div>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={onUpper}>Uppercase</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={onLower}>Lowercase</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={onCapitalize}>Capitalize</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={onTrim}>Trim</button>
-                <button type="button" className="btn btn-info mx-2 my-2" onClick={onCopy}>{copy}</button>
-                <button type="button" className="btn btn-danger mx-2 my-2" onClick={onClear}>Clear Text</button>
+                <button type="button" disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={onUpper}>Uppercase</button>
+                <button type="button" disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={onLower}>Lowercase</button>
+                <button type="button" disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={onCapitalize}>Capitalize</button>
+                <button type="button" disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={onTrim}>Trim</button>
+                <button type="button" disabled={text.length===0} className="btn btn-info mx-2 my-2" onClick={onCopy}>{copy}</button>
+                <button type="button" disabled={text.length===0} className="btn btn-danger mx-2 my-2" onClick={onClear}>Clear Text</button>
             </div>
 
             <div className={`container my-4 text-${props.mode === 'light' ? "dark" : "light"}`}>
