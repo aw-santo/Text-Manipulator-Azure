@@ -15,7 +15,7 @@ export default function About( props ) {
                         <div className="accordion-body">
                             <strong>Text Manipulating and modifying web-app.</strong> Bring some text and play with it, turn all characters to uppercase, to lowercase, to capitalize format, trim the text and many more to come in future also. Hence it is called text-utility app.
                         </div>
-                    </div>
+                    </div>  
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingTwo">

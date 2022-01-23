@@ -3,7 +3,7 @@ import "./textForm.css";
 
 export default function TextForm(props) {
 
-    const [text, setText] = useState('Lorem ipsum...');
+    const [text, setText] = useState('Enter the text...');
     const [copy, setCopy] = useState('copy');
 
 
@@ -18,7 +18,7 @@ export default function TextForm(props) {
         props.alert("success", "Text changed to uppercase!");
     }
 
-    const onLower = () => {
+    const onLower = () => {  
         setText(text.toLowerCase());
         setCopy('copy');
         props.alert("success", "Text changed to lowercase!");

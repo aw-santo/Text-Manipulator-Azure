@@ -15,7 +15,7 @@ function App() {
 
   const showAlert = ( tp, msg ) => {
     setAlert({
-      message: msg,
+      message: msg,  
       type: tp
     });
 
